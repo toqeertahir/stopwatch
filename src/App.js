@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './App.css';
 const App = () => {
-  const [timer, setTimer] = useState(3595)
+  const [timer, setTimer] = useState(0)
   const [isActive, setIsActive] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
   const increment = useRef(null)
@@ -43,7 +43,6 @@ const App = () => {
   return (
     <div className="App">
       <h3>React Stopwatch</h3>
-      <div className='stopwatch-card'>
         <h4>{formatTime()}</h4>
         <div className='buttons'>
           {
@@ -57,8 +56,7 @@ const App = () => {
           <button className='btn btn-danger mx-1' onClick={handleReset} disabled={!isActive}>Reset</button>
         </div>
       </div>
-    </div>
-  );
+      );
 }
 
 export default App;
